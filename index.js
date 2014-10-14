@@ -31,6 +31,13 @@ var routes = [
     config: {
       handler: home
     }
+  },
+  {
+    method: 'GET',
+    path: '/feed',
+    config: {
+      handler: services.recent
+    }
   }
 ];
 
@@ -54,27 +61,24 @@ server.start(function () {
   var io = SocketIO.listen(server.listener);
 
   io.on('connection', function (socket) {
-    //services.recent(socket);
     console.log('connected')
     socket.on('join', function (user) {
-      console.log(user)
+      console.log('joined room ', user)
     });
 
     socket.on('message', function (data) {
       console.log('incoming data ', data)
 
-      var payload = {
-        text: data.text,
-        public: data.public || false,
-        sender: data.sender,
-        receiver: data.receiver
-      };
-
-      services.addMessage(payload, io, function (err, chat) {
+      services.addMessage(data, function (err, message) {
         if (err) {
           console.log('error ', err);
         } else {
-          io.emit('message', chat);
+          console.log(message.receiver + '!' + message.sender)
+          io.sockets.in(message.receiver + '!' + message.sender).emit('message', message);
+
+          if (data.public) {
+            io.emit('message', message);
+          }
         }
       });
     });
@@ -83,6 +87,7 @@ server.start(function () {
 
 function home(request, reply) {
   reply.view('index', {
-    url: nconf.get('url')
+    url: nconf.get('url'),
+    pageType: 'home'
   });
 }

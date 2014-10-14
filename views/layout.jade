@@ -7,15 +7,19 @@ html
     link(rel='stylesheet', href='/css/reset.css')
     link(rel='stylesheet', href='/css/main.css')
 
-  body
+  body(class='#{pageType}')
     header
       p RWRrD
-      p.small
-        | federated messaging using&#xa0;
-        a(href='http://keybase.io') keybase.io
+      block title
+        p.small
+          | federated messaging using&#xa0;
+          a(href='http://keybase.io') keybase.io
     .wrapper
       block content
 
     footer
       section
         block footer
+    script(type='text/javascript', src='/socket.io/socket.io.js')
+    script(type='text/javascript', src='/js/jquery.js')
+    block scripts

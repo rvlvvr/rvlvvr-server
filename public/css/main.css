@@ -4,11 +4,15 @@ body, html {
 }
 
 body {
-  background-image: url(/images/back.jpg);
+  background-color: #eee;
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+body.home {
+  background-image: url(/images/back.jpg);
 }
 
 header {
@@ -74,6 +78,50 @@ li {
   font-size: 1.6rem;
   line-height: 2rem;
   padding: 8px 5px;
+}
+
+.feed li {
+  margin-bottom: 5px;
+  box-shadow: none;
+  position: relative;
+  width: 100%;
+  padding: 8px 0;
+}
+
+.feed li p {
+  font-size: 1.4rem;
+  min-height: 152px;
+  margin-left: 210px;
+}
+
+.feed li .avatars {
+  float: left;
+  height: 100px;
+  width: 200px;
+  position: relative;
+}
+
+.feed li .label {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(1, 1, 1, 0.6);
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  padding: 0 2px;
+  position: absolute;
+  left: 1px;
+  bottom: 1px;
+  text-transform: uppercase;
+}
+
+.feed li .avatars div {
+  height: 80px;
+  width: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.feed li img {
+  margin-top: -20px;
 }
 
 footer, header p {
