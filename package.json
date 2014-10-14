@@ -1,7 +1,7 @@
 {
-  "name": "rwrd-server",
+  "name": "rwrrd-server",
   "version": "1.0.0",
-  "description": "federated messaging experiment",
+  "description": "federated messaging experiment - server",
   "private": true,
   "engines": {
     "node": "~0.10.x",
@@ -14,10 +14,8 @@
     "hapi": "~6.4.0",
     "jade": "~1.5.0",
     "meatspace-publico": "~1.0.1",
-    "moment": "^2.8.3",
     "nconf": "~0.6.9",
     "socket.io": "^1.1.0",
-    "twitter-text": "~1.9.4",
     "level-dual-message": "~2.0.0"
   },
   "repository": {
