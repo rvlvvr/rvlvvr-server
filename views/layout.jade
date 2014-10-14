@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title rwrrd
+    meta(content='width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0', name='viewport')
+    meta(content='yes', name='apple-mobile-web-app-capable')
+    link(rel='stylesheet', href='/css/reset.css')
+    link(rel='stylesheet', href='/css/main.css')
+
+  body
+    header
+      p RWRrD
+      p.small
+        | federated messaging using&#xa0;
+        a(href='http://keybase.io') keybase.io
+    .wrapper
+      block content
+
+    footer
+      section
+        block footer

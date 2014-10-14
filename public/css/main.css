@@ -1,0 +1,93 @@
+body, html {
+  height: 100%;
+  position: relative;
+}
+
+body {
+  background-image: url(/images/back.jpg);
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+header {
+  display: block;
+  font-size: 3.5rem;
+}
+
+header p {
+  display: inline-block;
+  float: left;
+  clear: both;
+  padding: 5px 5px 5px 15px;
+}
+
+a {
+  background-color: #38f1b6;
+  color: #111;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #fff;
+  color: #888
+}
+
+p.small {
+  font-size: 1.8rem;
+}
+
+section, footer, header {
+  clear: both;
+  float: left;
+  width: 100%;
+}
+
+h1 {
+  background-color: #f8bd4a;
+  box-shadow: #111 5px 5px 0;
+  display: inline-block;
+  color: #111;
+  font-size: 1.8rem;
+  margin: 15px 15px 0 30px;
+  padding: 2px 5px;
+}
+
+section.main {
+  padding: 25px 15px 65px 35px;
+  width: auto;
+}
+
+span.number {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+li {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: #111 12px 12px 0;
+  display: inline-block;
+  clear: both;
+  float: left;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  padding: 8px 5px;
+}
+
+footer, header p {
+  background-color: #111;
+  color: #eee;
+}
+
+footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+footer section {
+  font-size: 1.5rem;
+  padding: 2px 15px 15px 15px;
+}

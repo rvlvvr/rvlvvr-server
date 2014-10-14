@@ -1,0 +1,23 @@
+extend layout
+
+block content
+  h1 I am a participating server and my URL is: #{url}
+  section.main
+    ol
+      li
+        span.number 1.
+        | Track a user and have them track you to communicate
+      li
+        span.number 2.
+        | Write them a message and set it as public or private
+      li
+        span.number 3.
+        | Broadcast the message to participating servers
+      li
+        span.number 4.
+        | Listen for incoming messages on your local RWRD server
+
+block footer
+  p
+    | All code is hosted on&#xa0;
+    a(href='http://github.com/ednapiranha/rwrd-server.git') Github
