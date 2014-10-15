@@ -74,7 +74,7 @@ server.start(function () {
         if (err) {
           console.log('error ', err);
         } else {
-          socket.broadcast.to(message.receiver + '!' + message.sender).emit('message', message);
+          io.sockets.to(message.receiver + '!' + message.sender).emit('message', message);
 
           if (data.public) {
             io.emit('feed', message);

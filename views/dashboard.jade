@@ -17,6 +17,7 @@ block content
               img(src='#{m.value.message.receiverAvatar}')
               span.label= m.value.message.receiver
         p= m.value.message.text
+        time= m.value.created
 
 block scripts
   script(type='text/javascript', src='/js/feed.js')

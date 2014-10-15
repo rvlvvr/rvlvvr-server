@@ -11,6 +11,11 @@ $(function () {
 
     li.find('.avatars').append(senderAvatar.append(senderLabel));
 
+    if (data.created) {
+      var timeEl = $('<time></time>');
+      timeEl.text(data.created);
+      li.append(timeEl);
+    }
 
     if (data.sender !== data.receiver) {
       var recipient = $('<div class="recipient"></div>');

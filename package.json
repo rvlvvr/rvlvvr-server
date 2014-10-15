@@ -16,7 +16,8 @@
     "meatspace-publico": "~1.0.1",
     "nconf": "~0.6.9",
     "socket.io": "^1.1.0",
-    "level-dual-message": "~2.0.0"
+    "level-dual-message": "~2.1.0",
+    "webremix": "~1.0.0"
   },
   "repository": {
     "type": "git",
