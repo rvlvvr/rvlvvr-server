@@ -3,7 +3,7 @@ $(function () {
 
   var feed = $('.feed');
 
-  socket.on('message', function (data) {
+  socket.on('feed', function (data) {
     var li = $('<li><div class="avatars"></div></li>');
     var senderAvatar = $('<div><img src="' + data.senderAvatar + '"></img></div>');
     var senderLabel = $('<span class="label">' + data.sender + '</span>');

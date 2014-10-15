@@ -59,11 +59,12 @@ server.route({
 
 server.start(function () {
   var io = SocketIO.listen(server.listener);
+  var room;
 
   io.on('connection', function (socket) {
     console.log('connected')
     socket.on('join', function (user) {
-      console.log('joined room ', user)
+      socket.join(user);
     });
 
     socket.on('message', function (data) {
@@ -73,11 +74,10 @@ server.start(function () {
         if (err) {
           console.log('error ', err);
         } else {
-          console.log(message.receiver + '!' + message.sender)
-          io.sockets.in(message.receiver + '!' + message.sender).emit('message', message);
+          socket.broadcast.to(message.receiver + '!' + message.sender).emit('message', message);
 
           if (data.public) {
-            io.emit('message', message);
+            io.emit('feed', message);
           }
         }
       });
