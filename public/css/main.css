@@ -81,6 +81,13 @@ li {
   padding: 8px 5px;
 }
 
+.feed {
+  clear: both;
+  float: left;
+  width: 95%;
+  margin-bottom: 50px;
+}
+
 .feed li {
   margin-bottom: 5px;
   box-shadow: none;
