@@ -1,10 +1,10 @@
 extend layout
 
 block title
-  p.small Public feed
+  p.small #{key} feed
 
 block content
-  ol.feed
+  ol.feed(data-key='#{key}')
     - for m in messages
       - var msgType = m.value.message.public ? 'public' : 'private'
       li(class='#{msgType}')
@@ -21,4 +21,4 @@ block content
         time= m.value.created
 
 block scripts
-  script(type='text/javascript', src='/js/feed.js')
+  script(type='text/javascript', src='/js/dual.js')

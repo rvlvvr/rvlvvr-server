@@ -38,6 +38,13 @@ var routes = [
     config: {
       handler: services.recent
     }
+  },
+  {
+    method: 'GET',
+    path: '/recent/{key}',
+    config: {
+      handler: services.recentByKey
+    }
   }
 ];
 
@@ -62,9 +69,14 @@ server.start(function () {
   var room;
 
   io.on('connection', function (socket) {
-    console.log('connected')
     socket.on('join', function (user) {
+      console.log('client connected');
+      console.log(socket.rooms)
       socket.join(user);
+    });
+
+    socket.on('disconnect', function () {
+      console.log('client disconnected');
     });
 
     socket.on('message', function (data) {
@@ -74,7 +86,8 @@ server.start(function () {
         if (err) {
           console.log('error ', err);
         } else {
-          io.sockets.to(message.receiver + '!' + message.sender).emit('message', message);
+          var keyName = [message.sender, message.receiver].sort().join('-');
+          io.sockets.to(keyName).emit('message', message);
 
           if (data.public) {
             io.emit('feed', message);
