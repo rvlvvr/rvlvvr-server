@@ -3,7 +3,7 @@ var socket = io();
 var $ = require('jquery');
 var r = require('./render');
 var body = $('body');
-var feed = $('.feed');
+var feed = $('#feed');
 
 switch (body.data('page')) {
   case 'feed':
