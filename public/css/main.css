@@ -80,14 +80,14 @@ li {
   padding: 8px 5px;
 }
 
-.feed {
+#feed {
   clear: both;
   float: left;
   width: 95%;
   margin-bottom: 50px;
 }
 
-.feed li {
+#feed li {
   margin-bottom: 5px;
   box-shadow: none;
   position: relative;
@@ -95,13 +95,13 @@ li {
   padding: 8px 0;
 }
 
-.feed li.private .para {
+#feed li.private .para {
   color: #bbb;
   font-size: 0.7rem;
   line-height: 0.7rem;
 }
 
-.feed li .para {
+#feed li .para {
   font-size: 1.2rem;
   line-height: 1.4rem;
   min-height: 152px;
@@ -113,14 +113,14 @@ li {
   padding-right: 10px;
 }
 
-.feed li .avatars {
+#feed li .avatars {
   float: left;
   height: 100px;
   width: 200px;
   position: relative;
 }
 
-.feed li .label {
+#feed li .label {
   color: rgba(255, 255, 255, 0.6);
   background-color: rgba(1, 1, 1, 0.6);
   font-size: 0.9rem;
@@ -132,18 +132,18 @@ li {
   text-transform: uppercase;
 }
 
-.feed li .avatars div {
+#feed li .avatars div {
   height: 80px;
   width: 200px;
   overflow: hidden;
   position: relative;
 }
 
-.feed li img {
+#feed li img {
   margin-top: -20px;
 }
 
-.feed time {
+#feed time {
   background-color: #111;
   color: #eee;
   bottom: 0;
