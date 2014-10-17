@@ -1,6 +1,9 @@
+var $ = require('jquery');
+var moment = require('moment');
+
 var feed = $('.feed');
 
-function render(data) {
+exports.render = function (data) {
   if (!data.sender) {
     data = data.value.message;
   }
@@ -29,4 +32,4 @@ function render(data) {
 
   li.append(div);
   feed.prepend(li);
-}
+};

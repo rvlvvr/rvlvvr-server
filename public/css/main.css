@@ -109,6 +109,8 @@ li {
   overflow-x: hidden;
   overflow-y: auto;
   max-height: 500px;
+  padding-bottom: 10px;
+  padding-right: 10px;
 }
 
 .feed li .avatars {

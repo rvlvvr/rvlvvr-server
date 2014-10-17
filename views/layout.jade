@@ -7,7 +7,7 @@ html
     link(rel='stylesheet', href='/css/reset.css')
     link(rel='stylesheet', href='/css/main.css')
 
-  body(class='#{pageType}')
+  body(class='#{pageType}', data-page='#{pageType}')
     header
       p rvlvvr
       block title
@@ -23,6 +23,4 @@ html
           | All code is hosted on&#xa0;
           a(href='http://github.com/rwrrd/rwrrd-server.git') Github
     script(type='text/javascript', src='/socket.io/socket.io.js')
-    script(type='text/javascript', src='/js/libs.js')
-    script(type='text/javascript', src='/js/render.js')
-    block scripts
+    script(type='text/javascript', src='/js/bundle.js')

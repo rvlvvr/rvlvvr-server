@@ -56,7 +56,7 @@ server.route({
   config: {
     handler: {
       directory: {
-        path: './public',
+        path: './dist',
         listing: false,
         index: false
       }
@@ -80,11 +80,11 @@ server.start(function () {
     });
 
     socket.on('feed', function () {
-      services.recent(io);
+      services.recent(socket);
     });
 
     socket.on('dual', function (data) {
-      services.recentByKey(data, io);
+      services.recentByKey(data, socket);
     });
 
     socket.on('message', function (data) {
@@ -114,11 +114,14 @@ function home(request, reply) {
 }
 
 function dashboard(request, reply) {
-  reply.view('dashboard');
+  reply.view('dashboard', {
+    pageType: 'feed'
+  });
 }
 
 function dual(request, reply) {
   reply.view('dual', {
-    key: request.params.key
+    key: request.params.key,
+    pageType: 'dual'
   });
 }
