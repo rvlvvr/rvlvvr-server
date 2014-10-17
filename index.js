@@ -70,7 +70,7 @@ server.start(function () {
   io.on('connection', function (socket) {
     socket.on('join', function (user) {
       //socket.disconnect();
-      console.log('client connected');
+      console.log('client connected ', user);
       console.log(socket.rooms)
       socket.join(user);
     });
