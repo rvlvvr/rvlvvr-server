@@ -1,5 +1,5 @@
 {
-  "name": "rwrrd-server",
+  "name": "rvlvvr-server",
   "version": "1.0.0",
   "description": "federated messaging experiment - server",
   "private": true,
@@ -16,12 +16,11 @@
     "meatspace-publico": "~1.0.1",
     "nconf": "~0.6.9",
     "socket.io": "^1.1.0",
-    "level-dual-message": "~2.1.0",
     "webremix": "~1.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/rwrrd/rwrrd-server.git"
+    "url": "git://github.com/rvlvvr/rvlvvr-server.git"
   },
   "author": "Edna Piranha <jen@ednapiranha.com> (http://ednapiranha.com)",
   "license": "BSD"
