@@ -1,24 +1,10 @@
 extend layout
 
 block title
-  p.small Public feed
+  p.small public feed
 
 block content
   ol.feed
-    - for m in messages
-      - var msgType = m.value.message.public ? 'public' : 'private'
-      li(class='#{msgType}')
-        .avatars
-          div
-            img(src='#{m.value.message.senderAvatar}')
-            span.label= m.value.message.sender
-
-          - if (m.value.message.sender !== m.value.message.receiver)
-            div.recipient
-              img(src='#{m.value.message.receiverAvatar}')
-              span.label= m.value.message.receiver
-        p= m.value.message.text
-        time= m.value.created
 
 block scripts
   script(type='text/javascript', src='/js/feed.js')

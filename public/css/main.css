@@ -24,7 +24,6 @@ header {
 header p {
   display: inline-block;
   float: left;
-  clear: both;
   padding: 5px 5px 5px 15px;
 }
 
@@ -96,17 +95,19 @@ li {
   padding: 8px 0;
 }
 
-.feed li.private p {
+.feed li.private .para {
   color: #bbb;
   font-size: 0.7rem;
   line-height: 0.7rem;
 }
 
-.feed li p {
+.feed li .para {
   font-size: 1.2rem;
   min-height: 152px;
   margin-left: 210px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 500px;
 }
 
 .feed li .avatars {

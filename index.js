@@ -36,14 +36,14 @@ var routes = [
     method: 'GET',
     path: '/feed',
     config: {
-      handler: services.recent
+      handler: dashboard
     }
   },
   {
     method: 'GET',
     path: '/recent/{key}',
     config: {
-      handler: services.recentByKey
+      handler: dual
     }
   }
 ];
@@ -66,7 +66,6 @@ server.route({
 
 server.start(function () {
   var io = SocketIO.listen(server.listener);
-  var room;
 
   io.on('connection', function (socket) {
     socket.on('join', function (user) {
@@ -77,6 +76,14 @@ server.start(function () {
 
     socket.on('disconnect', function () {
       console.log('client disconnected');
+    });
+
+    socket.on('feed', function () {
+      services.recent(io);
+    });
+
+    socket.on('dual', function (data) {
+      services.recentByKey(data, io);
     });
 
     socket.on('message', function (data) {
@@ -102,5 +109,15 @@ function home(request, reply) {
   reply.view('index', {
     url: nconf.get('url'),
     pageType: 'home'
+  });
+}
+
+function dashboard(request, reply) {
+  reply.view('dashboard');
+}
+
+function dual(request, reply) {
+  reply.view('dual', {
+    key: request.params.key
   });
 }

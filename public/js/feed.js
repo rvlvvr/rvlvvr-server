@@ -3,17 +3,24 @@ $(function () {
 
   var feed = $('.feed');
 
+  socket.emit('feed');
+
   socket.on('feed', function (data) {
+    if (!data.sender) {
+      data = data.value.message;
+    }
+
     var li = $('<li><div class="avatars"></div></li>');
     var senderAvatar = $('<div><img src="' + data.senderAvatar + '"></img></div>');
     var senderLabel = $('<span class="label">' + data.sender + '</span>');
-    var p = $('<p>' + data.text + '</p>');
+    var div = $('<div class="para"></div>');
+    div.html(data.text);
 
     li.find('.avatars').append(senderAvatar.append(senderLabel));
 
     if (data.created) {
       var timeEl = $('<time></time>');
-      timeEl.text(data.created);
+      timeEl.text(moment.unix(data.created).fromNow());
       li.append(timeEl);
     }
 
@@ -24,7 +31,7 @@ $(function () {
       li.find('.avatars').append(recipient.append(receiverAvatar).append(receiverLabel));
     }
 
-    li.append(p);
+    li.append(div);
     feed.prepend(li);
   });
 });
