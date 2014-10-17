@@ -103,6 +103,7 @@ li {
 
 .feed li .para {
   font-size: 1.2rem;
+  line-height: 1.4rem;
   min-height: 152px;
   margin-left: 210px;
   overflow-x: hidden;
