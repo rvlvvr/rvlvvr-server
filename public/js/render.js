@@ -13,8 +13,16 @@ exports.render = function (data) {
     var li = $('<li data-created="' + data.created + '" class="' + isPublic + '"><div class="avatars"></div></li>');
     var senderAvatar = $('<div><img src="' + data.senderAvatar + '"></img></div>');
     var senderLabel = $('<span class="label">' + data.sender + '</span>');
+
     var div = $('<div class="para"></div>');
-    div.html(data.text);
+
+    if (!data.public) {
+      var pre = $('<pre></pre>');
+      pre.text(data.text);
+      div.append(pre);
+    } else {
+      div.html(data.text);
+    }
 
     li.find('.avatars').append(senderAvatar.append(senderLabel));
 
