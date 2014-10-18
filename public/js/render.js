@@ -5,10 +5,6 @@ var feed = $('#feed');
 
 exports.render = function (data) {
   if (feed.find('li[data-created="' + data.created + '"]').length === 0) {
-    if (!data.sender) {
-      data = data.value.message;
-    }
-
     var isPublic = data.public ? 'public' : 'private';
     var li = $('<li data-created="' + data.created + '" class="' + isPublic + '"><div class="avatars"></div></li>');
     var senderAvatar = $('<div><img src="' + data.senderAvatar + '"></img></div>');
