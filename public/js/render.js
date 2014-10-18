@@ -17,7 +17,7 @@ exports.render = function (data) {
       pre.text(data.text);
       div.append(pre);
     } else {
-      div.html(data.text);
+      div.html(data.html);
     }
 
     li.find('.avatars').append(senderAvatar.append(senderLabel));
