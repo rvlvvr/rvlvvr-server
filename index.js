@@ -69,9 +69,11 @@ server.start(function () {
 
   io.on('connection', function (socket) {
     socket.on('join', function (user) {
-      //socket.disconnect();
+      socket.rooms.forEach(function (room) {
+        socket.leave(room);
+      });
+
       console.log('client connected ', user);
-      console.log(socket.rooms)
       socket.join(user);
     });
 
