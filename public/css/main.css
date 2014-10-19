@@ -82,6 +82,10 @@ section, footer, header {
   width: 100%;
 }
 
+section:last-child {
+  margin-bottom: 30px;
+}
+
 h1 {
   display: inline-block;
   color: #111;
