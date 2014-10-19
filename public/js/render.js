@@ -16,6 +16,9 @@ exports.render = function (data) {
       var pre = $('<pre></pre>');
       pre.text(data.text);
       div.append(pre);
+
+      var small = $('<small>P</small>');
+      senderAvatar.append(small);
     } else {
       div.html(data.html);
     }
