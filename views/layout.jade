@@ -9,7 +9,9 @@ html
 
   body(class='#{pageType}', data-page='#{pageType}')
     header
-      p rvlvvr
+      img(src='/images/back.jpg')
+      p
+        a(href='/') rvlvvr
       block title
         p.small
           | distributed messaging using&#xa0;
@@ -18,9 +20,8 @@ html
       block content
 
     footer
-      section
-        p
-          | All code is hosted on&#xa0;
-          a(href='http://github.com/rvlvvr/rvlvvr-server.git') Github
+      p
+        | All code is hosted on&#xa0;
+        a(href='http://github.com/rvlvvr/rvlvvr-server.git') Github
     script(type='text/javascript', src='/socket.io/socket.io.js')
     script(type='text/javascript', src='/js/bundle.js')

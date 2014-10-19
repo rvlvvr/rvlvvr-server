@@ -4,7 +4,7 @@ body, html {
 }
 
 body {
-  background-color: #eee;
+  background-color: #fff;
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12,8 +12,23 @@ body {
   font-weight: 100;
 }
 
-body.home {
-  background-image: url(/images/back.jpg);
+body header img {
+  display: none;
+}
+
+body.home header img {
+  float: left;
+  width: 66px;
+}
+
+body.home .wrapper > section {
+  border-top: 5px solid #111;
+  padding: 20px 0;
+  width: 100%;
+}
+
+body.home .wrapper > section > * {
+  padding: 0 20px;
 }
 
 header {
@@ -25,6 +40,25 @@ header p {
   display: inline-block;
   float: left;
   padding: 5px 5px 5px 15px;
+}
+
+header p a {
+  background-color: #111;
+  color: #eee;
+}
+
+.home section p {
+  margin-top: 20px;
+}
+
+.home section p a {
+  font-size: 2rem;
+}
+
+.home section p small {
+  font-size: 1.2rem;
+  display: block;
+  margin: 10px 0;
 }
 
 a {
@@ -49,17 +83,14 @@ section, footer, header {
 }
 
 h1 {
-  background-color: #f8bd4a;
-  box-shadow: #111 5px 5px 0;
   display: inline-block;
   color: #111;
   font-size: 1.8rem;
-  margin: 15px 15px 0 30px;
-  padding: 2px 5px;
+  margin: 15px 15px 0 10px;
+  padding: 20px;
 }
 
 section.main {
-  padding: 25px 15px 65px 35px;
   width: auto;
 }
 
@@ -79,7 +110,7 @@ span.number {
 #feed li {
   background-color: #fff;
   border-bottom: 2px solid #eee;
-  margin: 5px 0;
+  margin: 1px 0;
   position: relative;
   width: 100%;
   padding: 8px 0;
@@ -107,6 +138,10 @@ span.number {
   position: absolute;
   right: 2px;
   top: 2px;
+}
+
+.feed #feed li .para {
+  min-height: 150px;
 }
 
 #feed li .para {
@@ -173,6 +208,5 @@ footer {
 }
 
 footer section {
-  font-size: 1.5rem;
-  padding: 2px 15px 15px 15px;
+  font-size: 1.2rem;
 }

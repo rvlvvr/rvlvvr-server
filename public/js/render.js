@@ -2,6 +2,7 @@ var $ = require('jquery');
 var moment = require('moment');
 
 var feed = $('#feed');
+var body = $('body');
 
 exports.render = function (data) {
   if (feed.find('li[data-created="' + data.created + '"]').length === 0) {
@@ -29,7 +30,7 @@ exports.render = function (data) {
     timeEl.text(moment.unix(data.created).fromNow());
     li.append(timeEl);
 
-    if (data.sender !== data.receiver) {
+    if (data.sender !== data.receiver && body.hasClass('feed')) {
       var recipient = $('<div class="recipient"></div>');
       var receiverAvatar = $('<img src="' + data.receiverAvatar + '"></img>');
       var receiverLabel = $('<span class="label">' + data.receiver + '</span>');

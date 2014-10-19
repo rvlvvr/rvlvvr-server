@@ -1,7 +1,9 @@
 extend layout
 
 block content
-  h1 I am a participating server and my URL is: #{url}
+  h1
+    | I am a participating server and my URL is:&#xa0;
+    a(href='#{url}')= url
   section.main
     ol
       li
@@ -15,4 +17,9 @@ block content
         | Broadcast the message to participating servers
       li
         span.number 4.
-        | Check for incoming messages on your local RWRrD server
+        | Check for incoming messages on your local server
+  section
+    p
+      small Want to discover interesting conversations?
+      a(href='/feed') Take a look at the public feed
+      small The public feed contains all one-to-one messages between Keybase users that are not encrypted.
