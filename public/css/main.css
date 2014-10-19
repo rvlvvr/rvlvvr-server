@@ -13,10 +13,6 @@ body {
 }
 
 body header img {
-  display: none;
-}
-
-body.home header img {
   float: left;
   width: 66px;
 }
@@ -47,8 +43,8 @@ header p a {
   color: #eee;
 }
 
-.home section p {
-  margin-top: 20px;
+.home section {
+  margin: 20px 0;
 }
 
 .home section p a {
@@ -76,6 +72,10 @@ p.small {
   font-size: 1.8rem;
 }
 
+section.main {
+  margin-bottom: 0;
+}
+
 section, footer, header {
   clear: both;
   float: left;
@@ -86,12 +86,8 @@ h1 {
   display: inline-block;
   color: #111;
   font-size: 1.8rem;
-  margin: 15px 15px 0 10px;
-  padding: 20px;
-}
-
-section.main {
-  width: auto;
+  margin: 35px 15px 0 10px;
+  padding: 0 20px;
 }
 
 span.number {
@@ -208,6 +204,6 @@ footer {
 }
 
 footer .inner {
-  font-size: 0.9rem;
-  padding: 2px 10px;
+  font-size: 1rem;
+  padding: 5px 20px;
 }
