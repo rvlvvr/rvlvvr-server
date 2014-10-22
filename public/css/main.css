@@ -223,15 +223,19 @@ footer .inner {
 
   header p.small {
     font-size: 0.9rem;
-    line-height: 1.1rem;
+    line-height: 1.3rem;
     width: 150px;
   }
 
   h1 {
     font-size: 1.3rem;
     line-height: 1.5rem;
-    margin: 20px 10px 0px 10px;
+    margin: 20px 10px 0 10px;
     padding: 0 10px;
+  }
+
+  .main {
+    padding: 20px 0 10px 0;
   }
 
   span.number {
@@ -248,6 +252,6 @@ footer .inner {
   }
 
   section:last-child {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
 }
