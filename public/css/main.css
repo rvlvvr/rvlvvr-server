@@ -82,7 +82,7 @@ section, footer, header {
   width: 100%;
 }
 
-section:last-child {
+section.last {
   margin-bottom: 30px;
 }
 
@@ -223,7 +223,7 @@ footer .inner {
 
   header p.small {
     font-size: 0.9rem;
-    line-height: 1.3rem;
+    line-height: 1.1rem;
     width: 150px;
   }
 
@@ -234,8 +234,12 @@ footer .inner {
     padding: 0 10px;
   }
 
-  .main {
-    padding: 20px 0 10px 0;
+  body.home .wrapper > section {
+    padding: 20px 0 0 0;
+  }
+
+  .main li {
+    margin-bottom: 15px;
   }
 
   span.number {
@@ -251,7 +255,7 @@ footer .inner {
     line-height: 1.1rem;
   }
 
-  section:last-child {
+  section.last {
     margin-bottom: 60px;
   }
 }
