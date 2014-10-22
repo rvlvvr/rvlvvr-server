@@ -224,11 +224,12 @@ footer .inner {
   header p.small {
     font-size: 0.9rem;
     line-height: 1.1rem;
+    height: 35px;
     width: 150px;
   }
 
   h1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.5rem;
     margin: 20px 10px 0 10px;
     padding: 0 10px;
@@ -239,7 +240,7 @@ footer .inner {
   }
 
   .main li {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   span.number {
@@ -251,11 +252,11 @@ footer .inner {
   }
 
   footer .inner {
-    font-size: 0.9rem;
-    line-height: 1.1rem;
+    font-size: 0.7rem;
+    line-height: 1rem;
   }
 
   section.last {
-    margin-bottom: 60px;
+    margin-bottom: 100px;
   }
 }
