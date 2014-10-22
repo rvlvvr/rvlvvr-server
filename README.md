@@ -1,5 +1,7 @@
 # rvlvvr-server
 
+Broker server for messages from [rvlvvr-client](https://github.com/rvlvvr/rvlvvr-client)
+
 ## setup
 
     npm install
