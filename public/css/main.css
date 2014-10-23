@@ -183,8 +183,8 @@ span.number {
   position: relative;
 }
 
-#feed li img {
-  margin-top: -20px;
+#feed .image-wrapper {
+  margin: 10px 0;
 }
 
 #feed time {
