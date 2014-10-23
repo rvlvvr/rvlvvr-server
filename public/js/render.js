@@ -18,7 +18,7 @@ exports.render = function (data) {
       pre.text(data.text);
       div.append(pre);
 
-      var small = $('<small>P</small>');
+      var small = $('<img class="lock" src="/images/lock.svg">');
       senderAvatar.append(small);
     } else {
       div.html(data.html);
