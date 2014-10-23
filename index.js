@@ -91,7 +91,6 @@ server.start(function () {
 
     socket.on('message', function (data) {
       console.log('incoming data ', data)
-
       services.addMessage(data, function (err, message) {
         if (err) {
           console.log('error ', err);
