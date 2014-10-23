@@ -70,11 +70,18 @@ server.start(function () {
   io.on('connection', function (socket) {
     socket.on('join', function (user) {
       socket.rooms.forEach(function (room) {
-        socket.leave(room);
+        if (room.indexOf('notifications:') === -1) {
+          socket.leave(room);
+        }
       });
 
       console.log('client connected ', user);
       socket.join(user);
+    });
+
+    socket.on('notifications', function (user) {
+      console.log('join notifications:' + user)
+      socket.join('notifications:' + user);
     });
 
     socket.on('disconnect', function () {
@@ -97,6 +104,10 @@ server.start(function () {
         } else {
           var keyName = [message.sender, message.receiver].sort().join('-');
           io.sockets.to(keyName).emit('message', message);
+
+          if (message.receiver !== message.sender) {
+            io.sockets.to('notifications:' + message.receiver).emit('notifications', message.sender);
+          }
 
           if (data.public) {
             io.emit('feed', message);
