@@ -88,12 +88,12 @@ server.start(function () {
       console.log('client disconnected');
     });
 
-    socket.on('feed', function () {
+    socket.on('feed', function (data) {
       services.recent(socket);
     });
 
     socket.on('dual', function (data) {
-      services.recentByKey(data, socket);
+      services.recentByKey(data.start, data.key, socket);
     });
 
     socket.on('message', function (data) {
