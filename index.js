@@ -79,9 +79,9 @@ server.start(function () {
       socket.join(user);
     });
 
-    socket.on('notifications', function (user) {
-      console.log('join notifications:' + user)
-      socket.join('notifications:' + user);
+    socket.on('notifications', function (data) {
+      socket.join('notifications:' + data.user);
+      io.emit('online', data);
     });
 
     socket.on('disconnect', function () {
@@ -104,10 +104,7 @@ server.start(function () {
         } else {
           var keyName = [message.sender, message.receiver].sort().join('-');
           io.sockets.to(keyName).emit('message', message);
-
-          if (message.receiver !== message.sender) {
-            io.sockets.to('notifications:' + message.receiver).emit('notifications', message.sender);
-          }
+          io.sockets.to('notifications:' + message.receiver).emit('notifications', message.sender);
 
           if (data.public) {
             io.emit('feed', message);

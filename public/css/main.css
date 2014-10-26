@@ -105,6 +105,34 @@ span.number {
   margin-right: 10px;
 }
 
+section:first-child {
+  border-bottom: 1px solid #111;
+  margin: 30px 0 5px 0;
+  padding-bottom: 10px;
+}
+
+section {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin: 5px 0;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin: 5px 20px 10px 20px;
+}
+
+.notice {
+  font-size: 3rem;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#online img {
+  width: 50px;
+}
+
 #feed {
   clear: both;
   float: left;

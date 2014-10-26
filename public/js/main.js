@@ -4,12 +4,28 @@ var $ = require('jquery');
 var r = require('./render');
 var body = $('body');
 var feed = $('#feed');
+var online = $('#online');
+var nobodyOnline = $('.nobody');
+var noMessages = $('.nothing');
 
 switch (body.data('page')) {
   case 'feed':
     socket.emit('feed');
     socket.on('feed', function (data) {
+      noMessages.remove();
       r.render(data);
+    });
+
+    socket.on('online', function (data) {
+      if (online.find('li[data-id="' + data.user + '"]').length === 0) {
+        var li = $('<li></li>');
+        li.attr('data-id', data.user);
+        var img = $('<img></img>');
+        nobodyOnline.remove();
+        img.attr('src', data.avatar);
+        li.append(img);
+        online.append(li);
+      }
     });
     break;
 
