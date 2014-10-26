@@ -24,8 +24,10 @@ switch (body.data('page')) {
   case 'feed':
     socket.emit('feed');
     socket.on('feed', function (data) {
-      noMessages.remove();
-      r.render(data);
+      if (data) {
+        noMessages.remove();
+        r.render(data);
+      }
     });
 
     socket.on('active', function (data) {
