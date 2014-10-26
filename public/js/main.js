@@ -7,6 +7,7 @@ var feed = $('#feed');
 var online = $('#online');
 var nobodyOnline = $('.nobody');
 var noMessages = $('.nothing');
+var offlineTimeout = {};
 
 var activeUser = function (data) {
   if (online.find('li[data-id="' + data.user + '"]').length === 0) {
@@ -14,9 +15,18 @@ var activeUser = function (data) {
     li.attr('data-id', data.user);
     var img = $('<img></img>');
     img.attr('src', data.avatar);
-    nobodyOnline.remove();
+    nobodyOnline.hide();
     li.append(img);
     online.append(li);
+    clearTimeout(offlineTimeout[data.user]);
+    offlineTimeout[data.user] = setTimeout(function () {
+      console.log('timed out ', data.user)
+      online.find('li[data-id="' + data.user + '"]').remove();
+
+      if (online.find('li.user').length === 0) {
+        nobodyOnline.show();
+      }
+    }, 60000 * 3);
   }
 };
 
