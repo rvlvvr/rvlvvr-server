@@ -81,7 +81,12 @@ server.start(function () {
 
     socket.on('notifications', function (data) {
       socket.join('notifications:' + data.user);
-      io.emit('online', data);
+
+      if (data.status === 'online') {
+        io.emit('online', data);
+      } else {
+        io.emit('idle', data);
+      }
     });
 
     socket.on('disconnect', function () {

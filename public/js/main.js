@@ -8,6 +8,18 @@ var online = $('#online');
 var nobodyOnline = $('.nobody');
 var noMessages = $('.nothing');
 
+var activeUser = function (data) {
+  if (online.find('li[data-id="' + data.user + '"]').length === 0) {
+    var li = $('<li></li>');
+    li.attr('data-id', data.user);
+    var img = $('<img></img>');
+    nobodyOnline.remove();
+    img.attr('src', data.avatar);
+    li.append(img);
+    online.append(li);
+  }
+};
+
 switch (body.data('page')) {
   case 'feed':
     socket.emit('feed');
@@ -17,15 +29,11 @@ switch (body.data('page')) {
     });
 
     socket.on('online', function (data) {
-      if (online.find('li[data-id="' + data.user + '"]').length === 0) {
-        var li = $('<li></li>');
-        li.attr('data-id', data.user);
-        var img = $('<img></img>');
-        nobodyOnline.remove();
-        img.attr('src', data.avatar);
-        li.append(img);
-        online.append(li);
-      }
+      activeUser(data);
+    });
+
+    socket.on('idle', function (data) {
+      activeUser(data);
     });
     break;
 
