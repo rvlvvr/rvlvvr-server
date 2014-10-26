@@ -11,7 +11,7 @@ var offlineTimeout = {};
 
 var activeUser = function (data) {
   if (online.find('li[data-id="' + data.user + '"]').length === 0) {
-    var li = $('<li></li>');
+    var li = $('<li class="user"></li>');
     li.attr('data-id', data.user);
     var img = $('<img></img>');
     img.attr('src', data.avatar);
