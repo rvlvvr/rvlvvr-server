@@ -82,8 +82,8 @@ server.start(function () {
     socket.on('notifications', function (data) {
       socket.join('notifications:' + data.user);
 
-      if (data.status === 'online') {
-        io.emit('online', data);
+      if (data.status === 'active') {
+        io.emit('active', data);
       } else {
         io.emit('idle', data);
       }

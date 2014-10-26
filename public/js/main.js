@@ -28,7 +28,7 @@ switch (body.data('page')) {
       r.render(data);
     });
 
-    socket.on('online', function (data) {
+    socket.on('active', function (data) {
       activeUser(data);
     });
 
