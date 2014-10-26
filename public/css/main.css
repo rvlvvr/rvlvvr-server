@@ -129,6 +129,11 @@ section h2 {
   margin-bottom: 10px;
 }
 
+#online li {
+  float: left;
+  margin: 1px;
+}
+
 #online img {
   width: 50px;
 }
