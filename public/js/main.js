@@ -13,8 +13,8 @@ var activeUser = function (data) {
     var li = $('<li></li>');
     li.attr('data-id', data.user);
     var img = $('<img></img>');
-    nobodyOnline.remove();
     img.attr('src', data.avatar);
+    nobodyOnline.remove();
     li.append(img);
     online.append(li);
   }

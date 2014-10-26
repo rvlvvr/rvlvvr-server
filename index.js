@@ -80,8 +80,6 @@ server.start(function () {
     });
 
     socket.on('notifications', function (data) {
-      socket.join('notifications:' + data.user);
-
       if (data.status === 'active') {
         io.emit('active', data);
       } else {
