@@ -77,6 +77,7 @@ server.start(function () {
 
       console.log('client connected ', user);
       socket.join(user);
+      socket.join('notifications:' + user);
     });
 
     socket.on('notifications', function (data) {
