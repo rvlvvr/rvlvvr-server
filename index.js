@@ -77,10 +77,11 @@ server.start(function () {
 
       console.log('client connected ', user);
       socket.join(user);
-      socket.join('notifications:' + user);
     });
 
     socket.on('notifications', function (data) {
+      socket.join('notifications:' + data.user);
+
       if (data.status === 'active') {
         io.emit('active', data);
       } else {
