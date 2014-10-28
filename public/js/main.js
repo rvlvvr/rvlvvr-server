@@ -16,6 +16,7 @@ var activeUser = function (data) {
     var userLink = $('<a></a>');
     var img = $('<img></img>');
     userLink.attr('href', "http://keybase.io/" + data.user);
+    userLink.attr('title', data.user);
     img.attr('src', data.avatar);
     nobodyOnline.hide();
     userLink.append(img);
