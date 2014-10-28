@@ -178,6 +178,10 @@ section h2 {
   min-height: 150px;
 }
 
+.feed #feed li.broadcast .para {
+  min-height: 80px;
+}
+
 #feed li .para {
   font-size: 1.2rem;
   line-height: 1.4rem;
