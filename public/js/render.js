@@ -36,7 +36,7 @@ exports.render = function (data) {
       var receiverLabel = $('<span class="label">' + data.receiver + '</span>');
       li.find('.avatars').append(recipient.append(receiverAvatar).append(receiverLabel));
     } else {
-      li.classList.add('broadcast');
+      li.addClass('broadcast');
     }
 
     li.append(div);
