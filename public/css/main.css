@@ -197,6 +197,10 @@ section h2 {
   position: relative;
 }
 
+.recipient img {
+  margin: -80px auto 0;
+}
+
 #feed li .label {
   background-color: rgba(255, 255, 255, 0.8);
   color: #111;
