@@ -13,10 +13,13 @@ var activeUser = function (data) {
   if (online.find('li[data-id="' + data.user + '"]').length === 0) {
     var li = $('<li class="user"></li>');
     li.attr('data-id', data.user);
+    var userLink = $('<a></a>');
     var img = $('<img></img>');
+    userLink.attr('href', "http://keybase.io/" + data.user);
     img.attr('src', data.avatar);
     nobodyOnline.hide();
-    li.append(img);
+    userLink.append(img);
+    li.append(userLink);
     online.append(li);
     clearTimeout(offlineTimeout[data.user]);
     offlineTimeout[data.user] = setTimeout(function () {
