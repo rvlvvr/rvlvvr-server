@@ -1,8 +1,16 @@
+var MAX_LIMIT = 30;
+
 var $ = require('jquery');
 var moment = require('moment');
 
 var feed = $('#feed');
 var body = $('body');
+
+var truncateMessages = function(elements) {
+  if (elements.length > MAX_LIMIT) {
+    elements.slice(MAX_LIMIT, elements.length).remove();
+  };
+};
 
 exports.render = function (data) {
   if (feed.find('li[data-created="' + data.created + '"]').length === 0) {
@@ -41,5 +49,7 @@ exports.render = function (data) {
 
     li.append(div);
     feed.prepend(li);
+
+    truncateMessages(feed.find('li'))
   }
 };
