@@ -6,6 +6,8 @@ var moment = require('moment');
 var feed = $('#feed');
 var body = $('body');
 
+var updateInterval = null;
+
 var truncateMessages = function(elements) {
   if (elements.length > MAX_LIMIT) {
     elements.slice(MAX_LIMIT, elements.length).remove();
@@ -51,5 +53,22 @@ exports.render = function (data) {
     feed.prepend(li);
 
     truncateMessages(feed.find('li'))
+  }
+
+  if (!updateInterval) {
+    var updateTime = function (li) {
+      var originalTimeEl = li.find('time')[0];
+      originalTimeEl.remove();
+      var dataCreated = li.attr('data-created');
+      var timeEl = $('<time></time>');
+      timeEl.text(moment.unix(dataCreated).fromNow());
+      li.append(timeEl);
+    };
+
+    updateInterval = setInterval(function() {
+      feed.find('li').each(function(i) {
+        updateTime($(this));
+      });
+    }, 60000);
   }
 };
