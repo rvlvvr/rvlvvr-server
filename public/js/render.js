@@ -29,7 +29,7 @@ exports.render = function (data) {
       var small = $('<img class="lock" src="/images/lock.svg">');
       senderAvatar.append(small);
     } else {
-      div.html(data.html);
+      div.html(decodeURIComponent(escape(data.html)));
     }
 
     li.find('.avatars').append(senderAvatar.append(senderLabel));
